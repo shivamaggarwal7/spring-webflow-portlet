@@ -1,3 +1,4 @@
+<%--
 /**
  * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
@@ -11,25 +12,12 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
+--%>
 
-package com.example.plugins;
+<%@ page contentType="text/html" pageEncoding="UTF-8" %>
 
-import com.liferay.portal.kernel.util.ReleaseInfo;
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.portlet.bind.annotation.RenderMapping;
+This is the <b>spring-webflow-portlet</b> portlet.<br />
 
-@Controller
-@RequestMapping("VIEW")
-public class PortletViewController {
-
-	@RenderMapping
-	public String question(Model model) {
-		model.addAttribute("releaseInfo", ReleaseInfo.getReleaseInfo());
-
-		return "view";
-	}
-
-}
+<c:out escapeXml="true" value="${releaseInfo}" />.

@@ -136,6 +136,21 @@
 			<artifactId>spring-webmvc-portlet</artifactId>
 			<version>3.0.7.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.webflow</groupId>
+			<artifactId>spring-binding</artifactId>
+			<version>${springwebflow-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.webflow</groupId>
+			<artifactId>spring-webflow</artifactId>
+			<version>${springwebflow-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.webflow</groupId>
+			<artifactId>spring-js</artifactId>
+			<version>${springwebflow-version}</version>
+		</dependency>
 	</dependencies>
 <profiles>
 <profile>
@@ -150,4 +165,7 @@
 	</properties>
 	</profile>
 </profiles>
+	<properties>
+		<springwebflow-version>2.4.2.RELEASE</springwebflow-version>
+	</properties>
 </project>

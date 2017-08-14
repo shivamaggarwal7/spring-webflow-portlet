@@ -12,7 +12,7 @@
 
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="contentType" value="text/html;charset=UTF-8" />
-		<property name="prefix" value="/WEB-INF/jsp/views/" />
+		<property name="prefix" value="/WEB-INF/jsp/flows/" />
 		<property name="suffix" value=".jsp" />
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
 	</bean>
