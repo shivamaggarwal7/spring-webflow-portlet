@@ -3,15 +3,20 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 	
+	<var name="emp" class="com.example.controller.Employee"/>
+	
 	<view-state id="view1" >
 		<transition on="main" to="empView" />
 	</view-state>
 	
-	<view-state id="empView">
-		<transition on="addChild" to="childView"/>
+	<view-state id="empView" model="emp">
+	 	<transition on="addChildView" to="childView"/>
+	 	<on-exit>
+	 	   <evaluate expression="appointmentController.addEmp(emp)"/>
+	 	</on-exit>
 	</view-state>
 	
-	<view-state id="childView">
+	<view-state id="childView" model="emp">
 		<transition on="bookAppnt" to="appntView"/>
 	</view-state>
 	
