@@ -18,6 +18,10 @@ public class Appointment implements Serializable {
 	
 	private String childName;
 
+	private String hospName;
+
+	private Date date;
+	
 	public String getEmpName() {
 		return empName;
 	}
@@ -33,10 +37,6 @@ public class Appointment implements Serializable {
 	public void setChildName(String childName) {
 		this.childName = childName;
 	}
-
-	private String hospName;
-
-	private Date date;
 
 	public long getAppointmentId() {
 		return appointmentId;

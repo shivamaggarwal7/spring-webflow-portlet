@@ -5,7 +5,7 @@
 	<portlet:param name="execution" value="${flowExecutionKey}" />
 </portlet:actionURL>	
 
-<form:form id="appntForm" modelAttribute="appnt" action="${createChildURL}" method="POST" cssClass="form-horizontal">
+<form:form id="appntForm" modelAttribute="appnt" action="${createappntURL}" method="POST" cssClass="form-horizontal">
 	
     <form:input type="hidden" id="appointmentId" path="appointmentId" />
 
@@ -17,12 +17,25 @@
     </div>
     
     <div class="control-group">
-        <label class="control-label" for="empName">Child Name</label>
+        <label class="control-label" for="childName">Child Name</label>
         <div class="controls">
              <form:input type="text" id="childName" path="childName" />
         </div>
     </div>
-        
+    
+    <div class="control-group">
+        <label class="control-label" for="hospName">Hospital Name</label>
+        <div class="controls">
+             <form:input type="text" id="hospName" path="hospName" />
+        </div>
+    </div>
+    
+    <div class="control-group">
+        <label class="control-label" for="date">Date</label>
+        <div class="controls">
+             <form:input type="text" id="date" path="date" />
+        </div>
+    </div>        
     
     <div class="control-group">
         <div class="controls">

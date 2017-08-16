@@ -39,5 +39,11 @@ public class AppointmentController {
 		appnt.setChild(child);
 		appnt.setEmp(emp);
 	}
+	
+	public void finalAppnt(Appointment appnt)
+	{
+		
+		System.out.println("Final appnt");
+	}
 
 }

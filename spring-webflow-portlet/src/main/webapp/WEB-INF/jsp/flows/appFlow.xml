@@ -27,9 +27,12 @@
 	 <on-render>
 	   <evaluate expression="appointmentController.intitateAppnt(child,emp,appnt)"></evaluate>
 	 </on-render>
-	  <transition on="createAppnt" to="main" />
+	  <transition on="createAppnt" to="finalBoooking" >
+	  		<evaluate expression="appointmentController.finalAppnt(appnt)"></evaluate>
+	  </transition>
 	</view-state>
 	
+	<view-state id="finalBoooking" model="appnt"/>
 	<end-state id="finish"/>
 			
 </flow>
