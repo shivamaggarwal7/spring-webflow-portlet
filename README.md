@@ -12,4 +12,9 @@ is built on top of spring mvc portlet.In order to configure:
 - By convention,different flows are defined in subsequent packages and flow definitions and
   views and clubbed together in single package
 - The view state id in a flow file is set same as view file name,by convention
-- A flow definition consists of states(view,transition,evaluate expression) 
+- A flow definition consists of states(view,transition,evaluate expression)
+- All the bean definitions used in the web flow need to be serialized else we will get runtime exception
+  **Caused by: org.springframework.webflow.execution.repository.snapshot.SnapshotCreationException: Could not serialize flow execution;
+  make sure all objects stored in flow or flash scope are serializable**
+  
+ 

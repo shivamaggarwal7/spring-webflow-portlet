@@ -3,25 +3,31 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 	
-	<var name="emp" class="com.example.controller.Employee"/>
+	<var name="emp" class="com.example.beans.Employee"/>
+	<var name="child" class="com.example.beans.Child"/>
+	<var name="appnt" class="com.example.beans.Appointment"/>
 	
-	<view-state id="view1" >
+	<view-state id="view" >
 		<transition on="main" to="empView" />
 	</view-state>
 	
 	<view-state id="empView" model="emp">
-	 	<transition on="addChildView" to="childView"/>
-	 	<on-exit>
-	 	   <evaluate expression="appointmentController.addEmp(emp)"/>
-	 	</on-exit>
+	 	<transition on="addChildView" to="childView">
+	 	    <evaluate expression="appointmentController.addEmp(emp)"/>
+	 	</transition>
 	</view-state>
 	
-	<view-state id="childView" model="emp">
-		<transition on="bookAppnt" to="appntView"/>
-	</view-state>
+	<view-state id="childView" model="child">
+		<transition on="bookAppnt" to="appntView">
+		     <evaluate expression="appointmentController.addChild(child,emp)"/>
+		</transition>
+    </view-state>
 	
-	<view-state id="appntView">
-	  
+	<view-state id="appntView" model="appnt">
+	 <on-render>
+	   <evaluate expression="appointmentController.intitateAppnt(child,emp,appnt)"></evaluate>
+	 </on-render>
+	  <transition on="createAppnt" to="main" />
 	</view-state>
 	
 	<end-state id="finish"/>

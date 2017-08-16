@@ -1,13 +1,11 @@
-package com.example.controller;
+package com.example.beans;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 
@@ -23,10 +21,20 @@ public class Employee implements Comparable<Employee>,Serializable {
 	@Pattern(regexp="[\\p{IsAlphabetic}\\s]*" ,message="{Pattern.empname}")
 	private String empName;
 	
+	public Child getChild() {
+		return child;
+	}
+
+	public void setChild(Child child) {
+		this.child = child;
+	}
+
 	@NotNull
 	@NotEmpty
 	@Pattern(regexp="[\\p{IsAlphabetic}\\s]*")
 	private String grade;
+	
+	private Child child;
 
 	public Long getEmpId() {
 		return empId;
